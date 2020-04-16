@@ -3,7 +3,7 @@
 Aplicación utilizada en la cursada 2020 de Ingenieria de Software. UTN-FRLP
 <!-- GRUPO 9 -->
 <!-- Sanchez Matias Ezequiel --> 
-
+<!-- Sebastian Nuñez -->
 
 ## Dependencias
 
