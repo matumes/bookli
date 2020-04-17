@@ -5,7 +5,7 @@ Aplicación utilizada en la cursada 2020 de Ingenieria de Software. UTN-FRLP
 <!-- Sebastian Nuñez -->
 <!-- Ezequiel Garritano Stagñares -->
 <!-- Matias Ezequiel Sanchez-->
-
+<!-- Nicolas Di Yorio-->
 ## Dependencias
 
  - node > v10
