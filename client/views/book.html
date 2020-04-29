@@ -35,6 +35,10 @@
         <button class="btn btn-primary" data-ref="addToList">
             Empezar a leer
         </button>
+        <button class="btn btn-primary" onclick ="history.back()">
+            Atras
+        </button>
+
         {% endif %} {% if book.status == 'READING' %}
         <button class="btn btn-warning" data-ref="removeFromList">
             Dejar de leer
