@@ -75,7 +75,8 @@ function renderBook(book) {
     }
 
     if (book.status === 'FINISHED') {
-        bookRefs.removeFromFinish.addEventListener('click', null);
+        /* MODIFIQUE LA ACCION null POR LA FUNCION addToReadingList */
+        bookRefs.removeFromFinish.addEventListener('click', addToReadingList);
     }
 }
 
