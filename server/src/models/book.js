@@ -48,8 +48,8 @@ const Book = db.define(
             allowNull: false,
         },
         genres: {
-            type: Sequelize.JSON,
-	    allowNull: false, /* Bug#3: Tuve que añadir esta línea para que funcione */
+            type: Sequelize.STRING,
+	    allowNull: false,
 
         },
         authors: {
