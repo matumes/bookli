@@ -50,6 +50,16 @@ describe('Home Test', () => {
             .assert.elementPresent('.booklist .book');
     });
 
+
+    /*test('Deberia indicar si se aplica opacity al pasar sobre una card', browser => {
+        browser
+            .url(BASE_URL)
+            .waitForElementVisible('body')
+            .waitForElementVisible('.booklist .book')
+            .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');
+    });*/
+
+
     test('Deberia poder encontrar un libro por titulo', browser => {
         browser
             .url(BASE_URL)
