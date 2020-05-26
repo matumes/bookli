@@ -57,7 +57,7 @@ describe('Home Test', () => {
             .url(BASE_URL)
             .waitForElementVisible('body')
             .waitForElementVisible('.booklist .book')
-            .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');
+            .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0,5');
     });
 
 
@@ -120,23 +120,22 @@ describe('Detail view', () => {
 
  //------------------ Testeo Feature 1 ------------------------------
 
-      test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
-        browser
-           .url(BASE_URL + '/detail/2')
-           .waitForElementVisible('body')
-           .waitForElementVisible('.brand')
-           .assert.elementPresent(('.brand');
-	   .click('.brand__logo')
-             });
+     test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
+     browser
+         .url(BASE_URL + '/')
+         .waitForElementVisible('body')
+         .waitForElementVisible('.brand')
+	 .assert.elementPresent('.brand')
+         .click('.brand__logo');
+              });
+	
 
-
-	      
    //-------------------- fin del test Feature 1 ---------------------------------
 	
 
     test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
-            .url(BASE_URL + '/detail/1')
+            .url(BASE_URL + '/')
             .waitForElementVisible('body')
             .waitForElementVisible('.book__actions [data-ref=addToList]');
 
