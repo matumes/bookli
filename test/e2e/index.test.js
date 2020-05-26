@@ -116,6 +116,22 @@ describe('Detail view', () => {
    //-------------------- fin del test Feature 3 ---------------------------------
 
 
+
+
+ //------------------ Testeo Feature 1 ------------------------------
+
+      test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
+        browser
+           .url(BASE_URL)
+           .waitForElementVisible('body')
+           .waitForElementVisible('.brand')
+           .assert.elementPresent(('.brand');
+
+             });
+
+   //-------------------- fin del test Feature 1 ---------------------------------
+	
+
     test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
             .url(BASE_URL + '/detail/1')
