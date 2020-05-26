@@ -132,7 +132,7 @@ describe('Detail view', () => {
 
 
    //-------------------- fin del test Feature 1 ---------------------------------
-	
+
 
     test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
