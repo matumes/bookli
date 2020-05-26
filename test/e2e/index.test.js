@@ -57,15 +57,11 @@ describe('Home Test', () => {
             .url(BASE_URL)
             .waitForElementVisible('body')
             .waitForElementVisible('.booklist .book')
-<<<<<<< HEAD
-            .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0,5');
-=======
             .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '1');
->>>>>>> feature/#1
+	   
     });
 
-
-    test('Deberia poder encontrar un libro por titulo', browser => {
+	test('Deberia poder encontrar un libro por titulo', browser => {
         browser
             .url(BASE_URL)
             .waitForElementVisible('body')
@@ -124,18 +120,8 @@ describe('Detail view', () => {
 
  //------------------ Testeo Feature 1 ------------------------------
 
-<<<<<<< HEAD
+
      test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
-     browser
-         .url(BASE_URL + '/')
-         .waitForElementVisible('body')
-         .waitForElementVisible('.brand')
-	 .assert.elementPresent('.brand')
-         .click('.brand__logo');
-              });
-	
-=======
-      test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
         browser
 	   .url(BASE_URL + '/')
            .waitForElementVisible('body')
@@ -143,7 +129,7 @@ describe('Detail view', () => {
            .click('.brand__logo')
            .assert.urlEquals(BASE_URL+ '/' );
 	                    });
->>>>>>> feature/#1
+
 
    //-------------------- fin del test Feature 1 ---------------------------------
 	
@@ -152,7 +138,7 @@ describe('Detail view', () => {
         browser
             .url(BASE_URL + '/')
             .waitForElementVisible('body')
-            .waitForElementVisible('.book__actions [data-ref=addToList]');
+            .waitForElementVisible(' .book__actions [data-ref=addToList]');
 
         browser
             .click('.book__actions [data-ref=addToList]')
