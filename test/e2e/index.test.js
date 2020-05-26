@@ -126,7 +126,7 @@ describe('Detail view', () => {
            .waitForElementVisible('body')
            .waitForElementVisible('.brand')
            .assert.elementPresent(('.brand');
-
+	   .click('.brand__logo')
              });
 
    //-------------------- fin del test Feature 1 ---------------------------------
