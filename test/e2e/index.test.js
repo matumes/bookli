@@ -122,13 +122,15 @@ describe('Detail view', () => {
 
       test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
         browser
-           .url(BASE_URL)
+           .url(BASE_URL + '/detail/2')
            .waitForElementVisible('body')
            .waitForElementVisible('.brand')
            .assert.elementPresent(('.brand');
 	   .click('.brand__logo')
              });
 
+
+	      
    //-------------------- fin del test Feature 1 ---------------------------------
 	
 
