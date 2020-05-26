@@ -21,6 +21,7 @@ beforeEach(async (browser, done) => {
 after(() => {
     server.close();
 });
+//-----------------------------------------------------------------------------------
 
 describe('Home Test', () => {
     test('Deberia tener de titulo Bookli', browser => {
@@ -50,6 +51,16 @@ describe('Home Test', () => {
             .assert.elementPresent('.booklist .book');
     });
 
+
+    test('Deberia indicar si se aplica opacity al pasar sobre una card', browser => {
+        browser
+            .url(BASE_URL)
+            .waitForElementVisible('body')
+            .waitForElementVisible('.booklist .book')
+            .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');
+    });
+
+
     test('Deberia poder encontrar un libro por titulo', browser => {
         browser
             .url(BASE_URL)
@@ -72,13 +83,11 @@ describe('Home Test', () => {
             .pause(400);
 
         browser.expect.elements('.booklist .book').count.to.equal(0);
-        browser.expect
-            .element('.booklist.booklist--empty p')
-            .text.to.equal(
-                'Hmmm... Parece que no tenemos el libro que buscas.\nProba con otra busqueda.'
-            );
+        browser.expect.element('.booklist.booklist--empty p')
+               .text.to.equal('Hmmm... Parece que no tenemos el libro que buscas.\nProba con otra busqueda.');
     });
 });
+//----------------------------------------------------------------------------------------------
 
 describe('Detail view', () => {
     test('Deberia mostrar boton para agregar a lista de lectura', browser => {
@@ -91,6 +100,21 @@ describe('Detail view', () => {
             .element('.book__actions [data-ref=addToList]')
             .text.to.equal('Empezar a leer');
     });
+
+    //------------------ Testeo Feature 3 By Nico ------------------------------
+
+      test('Deberia volver a la pantalla principal (home) haciendo click  ', browser => {
+        browser
+           .url(BASE_URL + '/detail/1')
+           .waitForElementVisible('body')
+           .waitForElementVisible('button.btn:nth-child(2)')
+           .click('button.btn:nth-child(2)')          
+           .assert.urlEquals(BASE_URL+ '/' );  
+        
+             });
+  
+   //-------------------- fin del test Feature 3 ---------------------------------
+
 
     test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
