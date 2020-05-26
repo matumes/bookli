@@ -130,13 +130,12 @@ describe('Detail view', () => {
            .assert.urlEquals(BASE_URL+ '/' );
                                    });
 
-
    //-------------------- fin del test Feature 1 ---------------------------------
 
 
     test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
-            .url(BASE_URL + '/')
+            .url(BASE_URL + '/detail/1')
             .waitForElementVisible('body')
             .waitForElementVisible(' .book__actions [data-ref=addToList]');
 
