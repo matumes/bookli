@@ -128,7 +128,7 @@ describe('Detail view', () => {
            .waitForElementVisible('.brand__logo')
            .click('.brand__logo')
            .assert.urlEquals(BASE_URL+ '/' );
-	                    });
+                                   });
 
 
    //-------------------- fin del test Feature 1 ---------------------------------
