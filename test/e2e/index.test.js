@@ -57,7 +57,11 @@ describe('Home Test', () => {
             .url(BASE_URL)
             .waitForElementVisible('body')
             .waitForElementVisible('.booklist .book')
+<<<<<<< HEAD
             .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0,5');
+=======
+            .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '1');
+>>>>>>> feature/#1
     });
 
 
@@ -113,13 +117,14 @@ describe('Detail view', () => {
         
              });
   
-   //-------------------- fin del test Feature 3 ---------------------------------
+   //-------------------- fin del test Feature ---------------------------------
 
 
 
 
  //------------------ Testeo Feature 1 ------------------------------
 
+<<<<<<< HEAD
      test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
      browser
          .url(BASE_URL + '/')
@@ -129,6 +134,16 @@ describe('Detail view', () => {
          .click('.brand__logo');
               });
 	
+=======
+      test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
+        browser
+	   .url(BASE_URL + '/')
+           .waitForElementVisible('body')
+           .waitForElementVisible('.brand__logo')
+           .click('.brand__logo')
+           .assert.urlEquals(BASE_URL+ '/' );
+	                    });
+>>>>>>> feature/#1
 
    //-------------------- fin del test Feature 1 ---------------------------------
 	
