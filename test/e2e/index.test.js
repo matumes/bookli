@@ -58,7 +58,6 @@ describe('Home Test', () => {
             .waitForElementVisible('body')
             .waitForElementVisible('.booklist .book')
             .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '1');
-	   
     });
 
 	test('Deberia poder encontrar un libro por titulo', browser => {
@@ -123,7 +122,7 @@ describe('Detail view', () => {
 
      test('Deberia volver a la pagina home principal haciendo click en el logo ', browser => {
         browser
-	   .url(BASE_URL + '/')
+           .url(BASE_URL + '/' )
            .waitForElementVisible('body')
            .waitForElementVisible('.brand__logo')
            .click('.brand__logo')
