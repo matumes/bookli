@@ -43,6 +43,25 @@ describe('Home Test', () => {
             );
     });
 
+
+
+test('Deberia verificar que el input de búsqueda tenga placeholder', browser => {
+        browser
+            .url(BASE_URL)
+            .waitForElementVisible('body')
+            .waitForElementVisible('.search_input')
+            .assert.attributeContains(
+                '.search_input',
+                'placeholder',
+                'placeholder="nombre,autor,editorial..."'
+            );
+    });
+
+
+
+
+
+
     test('Deberia mostrar la lista de libros', browser => {
         browser
             .url(BASE_URL)
