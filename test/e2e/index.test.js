@@ -56,6 +56,7 @@ describe('Home Test', () => {
             .url(BASE_URL)
             .waitForElementVisible('body')
             .waitForElementVisible('.booklist .book')
+	    .moveToElement('body > main > div > div.books-container > div > a:nth-child(1) > div', 10, 10,)
             .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');
     });
 
