@@ -19,6 +19,7 @@
     --space-7: 2.5rem;
     --space-8: 3rem;
 
+    --yellow:#F8F7CA; 
     --white: #fff;
     --bg: #f4f5f7;
     --border: #cbd5e0;
@@ -138,7 +139,7 @@ p {
 }
 
 .card {
-    background: var(--white);
+    background: var(--yellow);
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
     border-radius: var(--radius);
