@@ -144,6 +144,10 @@ p {
     border-radius: var(--radius);
 }
 
+.card:hover {
+    opacity: 0.5;
+}
+
 .home {
     display: grid;
     grid-gap: var(--space-3);

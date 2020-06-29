@@ -8,24 +8,24 @@
             content="El mejor sitio para buscar y encontrar tu proximos libro."
         />
 
-        <link rel="icon" href="/assets/logo.svg" type="image/x-icon" />
+        <link rel="icon" href="/assets/logo.svg" type="image/x-icon"/>
         <link rel="stylesheet" href="/css/main.css" />
         <link rel="stylesheet" href="/css/booklist.css" />
         <link rel="stylesheet" href="/css/book.css" />
         <title>Bookli</title>
+	
     </head>
     <body class="app-layout">
         <header class="header">
-            <div class="brand">
-                <img
-                    class="brand__logo"
+    
+	 <div class="brand"> <a href="http://localhost:3000">
+  	         	  <img class="brand__logo"
                     src="/assets/logo.svg"
-                    alt="bookli logo"
-                />
+                   alt="bookli logo" />
                 <span class="brand__name">Bookli</span>
-            </div>
-
-            {% block search %} {% endblock %}
+	 </div></a>
+	 
+{% block search %} {% endblock %}
         </header>
 
         <main class="main" data-ref="main">
@@ -36,3 +36,4 @@
         {% block js %} {% endblock %}
     </body>
 </html>
+
