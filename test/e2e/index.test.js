@@ -57,11 +57,6 @@ test('Deberia verificar que el input de búsqueda tenga placeholder', browser =>
             );
     });
 
-
-
-
-
-
     test('Deberia mostrar la lista de libros', browser => {
         browser
             .url(BASE_URL)
@@ -70,17 +65,15 @@ test('Deberia verificar que el input de búsqueda tenga placeholder', browser =>
             .assert.elementPresent('.booklist .book');
     });
 
-
     test('Deberia indicar si se aplica opacity al pasar sobre una card', browser => {
-        browser
-            .url(BASE_URL)
-            .waitForElementVisible('body')
-            .waitForElementVisible('.booklist .book')
-		    .moveToElement('body > main > div > div.books-container > div > a:nth-child(1) > div', 10, 10,)
-		    .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');
-    });
+browser
+.url(BASE_URL)
+.waitForElementVisible('body')
+.waitForElementVisible('.booklist .book')
+.moveToElement('body>main > div > div.books-container > div > a:nth-child(1) > div', 10, 10,)
+.assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');});
 
-	test('Deberia poder encontrar un libro por titulo', browser => {
+    test('Deberia poder encontrar un libro por titulo', browser => {
         browser
             .url(BASE_URL)
             .waitForElementVisible('body')
