@@ -1,3 +1,7 @@
+# v1.2.1 (02/07/2020)
+  Se realiza cambio de color de la card a amarillo
+
+
 # Bookli
 
 Aplicación utilizada en la cursada 2020 de Ingenieria de Software. UTN-FRLP
