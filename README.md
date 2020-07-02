@@ -25,3 +25,7 @@ Di Yorio Nicolas
 ## Iniciar la app en modo producción
 
 `npm start`
+
+## V1.2.1 --> Se realiza mediante el HOT FIX el cambio de color a amerillo en el fondo de la Card mediante mod en el CSS
+
+
