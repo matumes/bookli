@@ -247,7 +247,8 @@ test('Deberia mostrar boton para remover libro de la lista de lectura si el libr
 
 
     test('Deberia mostrar boton comprar y dirigir a amazon', browser => {browser
- 			.url(BASE_URL + '/' )
+          
+           .url(BASE_URL + '/' )
            .waitForElementVisible('body')
            .waitForElementVisible('.comprar')
            .waitForElementVisible('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')
