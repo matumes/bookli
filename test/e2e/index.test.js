@@ -21,6 +21,8 @@ beforeEach(async (browser, done) => {
 after(() => {
     server.close();
 });
+
+
 //-----------------------------------------------------------------------------------
 
 describe('Home Test', () => {
@@ -65,7 +67,7 @@ test('Deberia verificar que el input de búsqueda tenga placeholder', browser =>
             .assert.elementPresent('.booklist .book');
     });
 
-    test('Deberia indicar si se aplica opacity al pasar sobre una card', browser => {
+	test('Deberia indicar si se aplica opacity al pasar sobre una card', browser => {
 browser
 .url(BASE_URL)
 .waitForElementVisible('body')
@@ -99,6 +101,9 @@ browser
                .text.to.equal('Hmmm... Parece que no tenemos el libro que buscas.\nProba con otra busqueda.');
     });
 });
+
+ 
+
 //----------------------------------------------------------------------------------------------
 
 describe('Detail view', () => {
@@ -143,24 +148,6 @@ describe('Detail view', () => {
                                    });
 
    //-------------------- fin del test Feature 1 ---------------------------------
-//------------------ Testeo Boton Comprar ------------------------------
-
-
-     test('Deberia mostrar boton comprar ', browser => {
-        browser
-           .url(BASE_URL + '/' )
-           .waitForElementVisible('body')
-           .waitForElementVisible('.comprar')
-           .waitForElementVisible('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')
-           .click('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')          
-           .assert.urlEquals(BASE_URL + '/detail/2'); 
-
-
-            });
-
-
-    
-   //-------------------- fin del test Boton Comprar ---------------------------------
 
 test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
@@ -229,4 +216,17 @@ test('Deberia mostrar boton para remover libro de la lista de lectura si el libr
             .element('.book__actions [data-ref=removeFromFinish]')
             .text.to.equal('Volver a leer');
     });
+
+
+    test('Deberia mostrar boton comprar y dirigir a amazon', browser => {browser
+ 			.url(BASE_URL + '/' )
+           .waitForElementVisible('body')
+           .waitForElementVisible('.comprar')
+           .waitForElementVisible('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')
+           .click('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')          
+           .assert.urlEquals(BASE_URL + '/detail/2'); 
+
+
+            });
+
 });
