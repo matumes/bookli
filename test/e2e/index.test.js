@@ -73,7 +73,18 @@ browser
 .moveToElement('body>main > div > div.books-container > div > a:nth-child(1) > div', 10, 10,)
 .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');});
 
-    test('Deberia poder encontrar un libro por titulo', browser => {
+
+test('Verifica que las cards tienenborde rojo', browser => {
+browser
+.url(BASE_URL)
+.waitForElementVisible('body')
+.waitForElementVisible('.booklist .book')
+
+.assert.cssProperty('a.book-link:nth-child(1) > div:nth-child(1)', 'border-color', 'rgb(255, 0, 0)');});
+	
+
+
+	test('Deberia poder encontrar un libro por titulo', browser => {
         browser
             .url(BASE_URL)
             .waitForElementVisible('body')
