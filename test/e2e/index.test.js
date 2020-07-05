@@ -21,6 +21,8 @@ beforeEach(async (browser, done) => {
 after(() => {
     server.close();
 });
+
+
 //-----------------------------------------------------------------------------------
 
 describe('Home Test', () => {
@@ -65,7 +67,24 @@ test('Deberia verificar que el input de búsqueda tenga placeholder', browser =>
             .assert.elementPresent('.booklist .book');
     });
 
+
+
+/* INICIO TEST VERIFICAR VISIBILIDAD DEL ISBN */
+
+    test('Deberia mostrar el ISBN del libro', browser => {
+        browser
+            .url(BASE_URL + '/detail/1')
+            .waitForElementVisible('body')
+            .waitForElementVisible('body > main > div > div.book__body')
+            .pause(400)
+            .assert.elementPresent('body > main > div > div.book__body > div > p:nth-child(1)');
+    });
+
+/* FIN TEST VERIFICAR VISIBILIDAD DEL ISBN */
+
+
     test('Deberia indicar si se aplica opacity al pasar sobre una card', browser => {
+
 browser
 .url(BASE_URL)
 .waitForElementVisible('body')
@@ -73,7 +92,18 @@ browser
 .moveToElement('body>main > div > div.books-container > div > a:nth-child(1) > div', 10, 10,)
 .assert.cssProperty('body > main > div > div.books-container > div > a:nth-child(1) > div', 'opacity', '0.5');});
 
-    test('Deberia poder encontrar un libro por titulo', browser => {
+
+test('Verifica que las cards tienenborde rojo', browser => {
+browser
+.url(BASE_URL)
+.waitForElementVisible('body')
+.waitForElementVisible('.booklist .book')
+
+.assert.cssProperty('a.book-link:nth-child(1) > div:nth-child(1)', 'border-color', 'rgb(255, 0, 0)');});
+	
+
+
+	test('Deberia poder encontrar un libro por titulo', browser => {
         browser
             .url(BASE_URL)
             .waitForElementVisible('body')
@@ -99,6 +129,9 @@ browser
                .text.to.equal('Hmmm... Parece que no tenemos el libro que buscas.\nProba con otra busqueda.');
     });
 });
+
+ 
+
 //----------------------------------------------------------------------------------------------
 
 describe('Detail view', () => {
@@ -139,13 +172,12 @@ describe('Detail view', () => {
            .waitForElementVisible('body')
            .waitForElementVisible('.brand__logo')
            .click('.brand__logo')
-           .assert.urlEquals(BASE_URL+ '/' );
+           .assert.urlEquals(BASE_URL + '/');
                                    });
 
    //-------------------- fin del test Feature 1 ---------------------------------
 
-
-    test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
+test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
             .url(BASE_URL + '/detail/1')
             .waitForElementVisible('body')
@@ -212,4 +244,18 @@ describe('Detail view', () => {
             .element('.book__actions [data-ref=removeFromFinish]')
             .text.to.equal('Volver a leer');
     });
+
+
+    test('Deberia mostrar boton comprar y dirigir a amazon', browser => {browser
+          
+           .url(BASE_URL + '/' )
+           .waitForElementVisible('body')
+           .waitForElementVisible('.comprar')
+           .waitForElementVisible('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')
+           .click('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')          
+           .assert.urlEquals(BASE_URL + '/detail/2'); 
+
+
+            });
+
 });
