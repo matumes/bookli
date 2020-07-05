@@ -65,6 +65,21 @@ test('Deberia verificar que el input de búsqueda tenga placeholder', browser =>
             .assert.elementPresent('.booklist .book');
     });
 
+
+/* INICIO TEST VERIFICAR VISIBILIDAD DEL ISBN */
+
+    test('Deberia mostrar el ISBN del libro', browser => {
+        browser
+            .url(BASE_URL + '/detail/1')
+            .waitForElementVisible('body')
+            .waitForElementVisible('body > main > div > div.book__body')
+            .pause(400)
+            .assert.elementPresent('body > main > div > div.book__body > div > p:nth-child(1)');
+    });
+
+/* FIN TEST VERIFICAR VISIBILIDAD DEL ISBN */
+
+
     test('Deberia indicar si se aplica opacity al pasar sobre una card', browser => {
 browser
 .url(BASE_URL)
