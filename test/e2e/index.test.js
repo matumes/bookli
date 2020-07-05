@@ -139,13 +139,30 @@ describe('Detail view', () => {
            .waitForElementVisible('body')
            .waitForElementVisible('.brand__logo')
            .click('.brand__logo')
-           .assert.urlEquals(BASE_URL+ '/' );
+           .assert.urlEquals(BASE_URL + '/');
                                    });
 
    //-------------------- fin del test Feature 1 ---------------------------------
+//------------------ Testeo Boton Comprar ------------------------------
 
 
-    test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
+     test('Deberia mostrar boton comprar ', browser => {
+        browser
+           .url(BASE_URL + '/' )
+           .waitForElementVisible('body')
+           .waitForElementVisible('.comprar')
+           .waitForElementVisible('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')
+           .click('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')          
+           .assert.urlEquals(BASE_URL + '/detail/2'); 
+
+
+            });
+
+
+    
+   //-------------------- fin del test Boton Comprar ---------------------------------
+
+test('Deberia mostrar boton para remover libro de la lista de lectura si el libro es parte de la lista de lectura', browser => {
         browser
             .url(BASE_URL + '/detail/1')
             .waitForElementVisible('body')
