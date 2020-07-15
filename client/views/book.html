@@ -3,19 +3,29 @@
         <img src="{{book.cover}}" alt="book cover" />
     </div>
 
+
     <div class="book__header">
         <p class="book__title">{{ book.title }}</p>
         <p class="book__author">por {{ book.authors | join(', ') }}</p>
+
+    
     </div>
     <div class="book__body">
         <p class="book__synopsis">{{ book.synopsis }}</p>
+            <p>
+    <button class="comprar" data-ref="comprar" onclick="location.href='https://www.amazon.es/comprar-libros-espa%C3%B1ol/b?ie=UTF8&node=599364031'">comprar</button>
 
         {% if detail %}
         <div class="book__extra-info">
             <p>
+                ISBN: 
+		<span class="highlight">{{ book.isbn }}</span>
+            </p>
+            <p>
                 Se publicó en el año
                 <span class="highlight">{{ book.year }}</span> por la editorial
                 <span class="highlight">{{ book.publisher }}</span>.
+
             </p>
             <p>
                 La primera edición se realizo en
