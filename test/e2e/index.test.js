@@ -252,8 +252,10 @@ test('Deberia mostrar boton para remover libro de la lista de lectura si el libr
            .waitForElementVisible('body')
            .waitForElementVisible('.comprar')
            .waitForElementVisible('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')
-           .click('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')          
-           .assert.urlEquals(BASE_URL + '/detail/2'); 
+           .click('body > main > div > div.books-container > div > a:nth-child(2) > div > div.book__body > p:nth-child(2) > button')  
+           .pause(400)
+            .click('body > main > div > div.book__body > p:nth-child(2) > button')         
+           .assert.urlEquals('https://www.amazon.es/comprar-libros-espa%C3%B1ol/b?ie=UTF8&node=599364031'); 
 
 
             });
