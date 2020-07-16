@@ -1,3 +1,13 @@
+
+## v1.2.3 (16/07/2020)
+
+  Se corrigio error en  test e2e  borde rojo en  la card
+  Se corrigio error en  test e2e  direciion de amazon al presionar "comprar" 
+
+  Quedaron ambos funcioando ok . 
+
+
+
 ## v1.2.2 (05/07/2020)
 
 
